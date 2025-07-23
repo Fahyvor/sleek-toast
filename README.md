@@ -24,7 +24,7 @@ npm install sleek-toast
 // App.jsx or index.js
 
 import React from "react";
-import SleekToast from "sleek-toasts";
+import SleekToast from "sleek-toast";
 
 function App() {
   return (
@@ -40,7 +40,7 @@ export default App;
 
 ## Triger toast from anywhere
 ```jsx
-import { toast } from "sleek-toasts";
+import { toast } from "sleek-toast";
 
 // Show success
 toast.success("Profile updated successfully!");
