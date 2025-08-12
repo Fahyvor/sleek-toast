@@ -1,6 +1,6 @@
 {
   "name": "sleek-toast",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A sleek and customizable toast notification component for React",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -17,10 +17,12 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npm run build:umd && npm run build:esm",
+    "build": "npm run build:umd && npm run build:esm && npm run build:types",
     "build:umd": "webpack --config webpack.config.js",
     "build:esm": "webpack --config webpack.esm.config.js",
-    "prepublishOnly": "npm run build",
+    "build:types": "cp src/index.d.ts dist/index.d.ts",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
     "dev": "webpack serve --config webpack.dev.config.js"
   },
   "keywords": [
