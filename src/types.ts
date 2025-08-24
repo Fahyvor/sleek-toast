@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export interface ToastOptions {
   type: "success" | "error" | "info" | "warning";
   message: string;
@@ -13,13 +11,6 @@ export interface ToastAPI {
   warning: (message: string, duration?: number) => void;
 }
 
-export declare const toast: ToastAPI;
-
 export interface SleekToastProps {
   position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
 }
-
-declare const SleekToast: React.FC<SleekToastProps>;
-
-export default SleekToast;
-export { SleekToast };
