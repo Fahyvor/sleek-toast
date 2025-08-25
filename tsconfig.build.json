@@ -1,12 +1,14 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "noEmit": false,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "dist",
-    "declarationMap": true,
-    "skipLibCheck": true
+    "outDir": "./dist",
+    "jsx": "react-jsx", 
+    "module": "ESNext",
+    "target": "ESNext"
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "example", "test"]
+  "include": ["src", "types"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
 }

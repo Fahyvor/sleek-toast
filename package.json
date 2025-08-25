@@ -1,6 +1,6 @@
 {
   "name": "sleek-toast",
-  "version": "1.0.22",
+  "version": "1.0.30",
   "description": "A sleek and customizable toast notification component for React",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -17,13 +17,12 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npm run build:umd && npm run build:esm && npm run build:types",
+    "clean": "rimraf dist",
     "build:umd": "webpack --config webpack.config.js",
     "build:esm": "webpack --config webpack.esm.config.js",
     "build:types": "tsc --project tsconfig.build.json",
-    "copy:types": "cp src/index.d.ts dist/index.d.ts",
-    "clean": "rimraf dist",
-    "prepublishOnly": "npm run clean && npm run build",
+    "build": "npm run clean && npm run build:umd && npm run build:esm && npm run build:types",
+    "prepublishOnly": "npm run build",
     "dev": "webpack --mode development --watch"
   },
   "keywords": [
@@ -36,8 +35,8 @@
   "author": "Fahyvor",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^19.1.1",
-    "react-dom": ">=16.8.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.28.3",
